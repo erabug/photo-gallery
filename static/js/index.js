@@ -9,15 +9,13 @@ function displayPhoto(obj) {
 
 function getPhotoset() {
     var photosetRequest = 'https://api.flickr.com/services/rest/?' +
-    'method=flickr.photosets.getPhotos&' +
-    'api_key=c8ea04dcb5d5b3d8847fec3da8ce01fe&photoset_id=' + photosetID +
-    '&extras=owner_name&format=json&nojsoncallback=1&' +
-    'auth_token=72157649978371949-180597e984ecbc27&' +
-    'api_sig=9f096aed37e36df8a338fd833700fcda';
+        'method=flickr.photosets.getPhotos&api_key=' + apiKEY + '&photoset_id=' +
+        photosetID + '&extras=ownername&format=json&nojsoncallback=1';
 
     return $.get(
         photosetRequest,
         function(data) {
+            console.log(data.photoset.owner);
             var photoset = data.photoset;
             getUserName(photoset.title, photoset.id, photoset.owner);
             photoset.photo.forEach(function(photo, i) {
@@ -33,10 +31,8 @@ function getPhotoset() {
 
 function getUserName(title, id, userID) {
     var userNameRequest = 'https://api.flickr.com/services/rest/?' +
-    'method=flickr.people.getInfo&api_key=4bae3856027d49cc68128d7b91ecf4a0&' +
-    'user_id=' + userID + '&format=json&nojsoncallback=1&' +
-    'auth_token=72157649991520888-c2e59fa9389c3262&' +
-    'api_sig=58456280a794f5262dc6bb25196306a4';
+        'method=flickr.people.getInfo&api_key=' + apiKEY + '&user_id=' + userID +
+        '&format=json&nojsoncallback=1';
 
     $.get(
         userNameRequest,
@@ -49,6 +45,7 @@ function getUserName(title, id, userID) {
 }
 
 var photosetID = '72157633849642806';
+var apiKEY = 'a4c155541ed517438cb670c55f4cbd46';
 var photoURLs = {};
 var thumbnailsDiv = $('.thumbnails');
 var displayDiv = $('.display');
@@ -76,6 +73,3 @@ $(document).ready(function() {
         });
     });
 });
-
-
-
