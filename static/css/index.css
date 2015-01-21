@@ -1,0 +1,72 @@
+.main-image {
+    height: 400px;
+}
+
+.display {
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.thumbnails {
+    display: inline-block;
+    margin: 10px 100px 10px 100px;
+}
+
+.thumb {
+    border: solid 2px #333;
+    height: 50px;
+}
+
+.gallery-container {
+    background-color: #000;
+    margin: -8px;
+}
+
+.text {
+    color: #fff;
+    margin-top: 10px;
+    height: 30px;
+}
+
+.title {
+    font-style: italic;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.nav {
+    font-size: 30px;
+    color: #999;
+    opacity: 0.5;
+    position: absolute;
+    top: 240px;
+}
+
+.nav:hover {
+    cursor: pointer;
+}
+
+#previous {
+    left: 15%;
+}
+
+#next {
+    right: 15%;
+}
+
+.active {
+    border-color: yellow;
+}
+
+input {
+    padding: 300px;   
+}
+
+body {
+    background-color: #333;
+    font-family: sans-serif;
+    text-align: center
+}
