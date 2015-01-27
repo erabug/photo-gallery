@@ -45,7 +45,7 @@ function getUserName(title, id, userID) {
 }
 
 var photosetID = '72157633849642806';
-var apiKEY = 'a4c155541ed517438cb670c55f4cbd46';
+var apiKEY = 'yourKey';
 var photoURLs = {};
 var thumbnailsDiv = $('.thumbnails');
 var displayDiv = $('.display');
